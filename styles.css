@@ -1,76 +1,121 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0f24, #081328, #020817);
+    color: #e6e6e6;
+    min-height: 100vh;
+}
+
+/* Header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 8px;
 }
 
+nav a:hover {
+    background: rgba(0, 234, 255, 0.2);
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* Main Content */
 main {
-    padding: 20px;
+    padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    animation: fadeIn 0.9s ease-in-out;
 }
 
 h1, h2 {
-    color: #333;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+    margin-bottom: 12px;
 }
 
+/* Project Cards */
 .project {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: 0.3s;
 }
 
+.project:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    color: #bfbfbf;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-/* Add responsiveness */
+/* Scroll Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        gap: 12px;
     }
     nav ul {
         flex-direction: column;
-        gap: 10px;
     }
 }
