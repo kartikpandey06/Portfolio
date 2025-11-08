@@ -3,44 +3,81 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vercel Deployment Test</title>
+    <title>Vercel Deployment Test v2</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
             padding: 40px;
             text-align: center;
         }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 500px;
-            margin: auto;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+
         h1 {
-            color: #222;
+            font-size: 2.4rem;
+            animation: fadeDown 1s both;
         }
+
         p {
-            color: #555;
+            margin: 12px 0 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #000;
-            color: white;
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 30px;
+            border-radius: 14px;
+            max-width: 700px;
+            margin: auto;
+            backdrop-filter: blur(8px);
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 22px;
+            font-size: 1rem;
+            border: none;
             border-radius: 8px;
-            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn1 { background: #ffca28; color: black; }
+        .btn1:hover { transform: scale(1.08); background: #ffe082; }
+
+        .btn2 { background: #29b6f6; color: black; }
+        .btn2:hover { transform: scale(1.08); background: #81d4fa; }
+
+        footer {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>🚀 Vercel Deployment Successful!</h1>
-        <p>Your test website is live on Vercel.</p>
-        <div class="badge">Hosted on Vercel</div>
+    <div class="container">
+        <h1>⚡ Vercel Deployment Test — Version 2</h1>
+        <p>If you see this updated design live, your redeploy worked ✅</p>
+
+        <button class="btn1" onclick="alert('Button 1 Clicked!')">Test Button 1</button>
+        <button class="btn2" onclick="alert('Button 2 Clicked!')">Test Button 2</button>
+
+        <footer>
+            Version 2 • UI Updated • With Buttons + Animation
+        </footer>
     </div>
 </body>
 </html>
